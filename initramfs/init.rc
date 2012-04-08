@@ -317,6 +317,8 @@ on post-fs
     mkdir /data/data/.youtube 0777
 
     # for wimax
+    exec /sbin/busybox mknod -m 0660 /dev/swmxctl c 234 0 
+    exec /sbin/busybox mknod -m 0660 /dev/uwibro  c 233 0
     chown system system /dev/swmxctl
     chown system system /dev/uwibro	
     chmod 0660 /dev/swmxctl
