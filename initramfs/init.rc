@@ -128,7 +128,7 @@ on fs
     start mknod_sdcard
     wait /dev/block/vold/179:1
     start mount_sdcard
-    wait /mnt/sdcard/multiboot/EL30/zImage
+    wait /mnt/sdcard/multiboot/FC09/zImage
     start losetup_system
     # http://git.kernel.org/?p=linux/kernel/git/stable/linux-stable.git;a=commit;h=ee86273062cbb310665fe49e1f1937d2cf85b0b9
     # http://git.kernel.org/?p=linux/kernel/git/stable/linux-stable.git;a=commit;h=51a0bb0c2e614659132fce272c8a1815a12c5c2a
@@ -903,20 +903,20 @@ service mount_sdcard /sbin/busybox mount -t vfat /dev/block/vold/179:1 /mnt/sdca
         disabled
         oneshot
 
-# exec /sbin/busybox losetup /dev/block/loop2 /sdcard/multiboot/EL30/system.ext4.img
-service losetup_system /sbin/busybox losetup /dev/block/loop2 /sdcard/multiboot/EL30/system.ext4.img
+# exec /sbin/busybox losetup /dev/block/loop2 /sdcard/multiboot/FC09/system.ext4.img
+service losetup_system /sbin/busybox losetup /dev/block/loop2 /sdcard/multiboot/FC09/system.ext4.img
         user root
         disabled
         oneshot
 
-# exec /sbin/busybox losetup /dev/block/loop3 /sdcard/multiboot/EL30/data.ext4.img
-service losetup_data /sbin/busybox losetup /dev/block/loop3 /sdcard/multiboot/EL30/data.ext4.img
+# exec /sbin/busybox losetup /dev/block/loop3 /sdcard/multiboot/FC09/data.ext4.img
+service losetup_data /sbin/busybox losetup /dev/block/loop3 /sdcard/multiboot/FC09/data.ext4.img
         user root
         disabled
         oneshot
 
-# exec /sbin/busybox losetup /dev/block/loop4 /sdcard/multiboot/EL30/cache.ext4.img
-service losetup_cache /sbin/busybox losetup /dev/block/loop4 /sdcard/multiboot/EL30/cache.ext4.img
+# exec /sbin/busybox losetup /dev/block/loop4 /sdcard/multiboot/FC09/cache.ext4.img
+service losetup_cache /sbin/busybox losetup /dev/block/loop4 /sdcard/multiboot/FC09/cache.ext4.img
         user root
         disabled
         oneshot
